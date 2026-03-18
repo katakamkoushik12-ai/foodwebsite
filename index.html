@@ -166,6 +166,67 @@ footer{
   text-align:center;
   padding:20px;
 }
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  background: linear-gradient(90deg,#ff512f,#dd2476);
+  color:white;
+  position:relative;
+}
+
+/* NAV */
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* MOBILE VIEW */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:100%;
+    background:#ff512f;
+    display:none;
+    text-align:center;
+  }
+
+  nav ul{
+    flex-direction:column;
+    padding:20px 0;
+  }
+
+  nav ul li{
+    margin:10px 0;
+  }
+
+  nav.active{
+    display:block;
+  }
+}
 
 </style>
 </head>
@@ -173,21 +234,20 @@ footer{
 <body>
 
 <!-- HEADER -->
-<header>
-  <div class="logo">TastyFoods</div>
+ <header>
+<div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
 
-  <nav>
+  <nav id="navbar">
     <ul>
-      <li><a href="#hero">Home</a></li>
+       <li><a href="index.html">Home</a></li>
       <li><a href="menu.html">Menu</a></li>
-
       <li class="cart-icon">
         <a href="cart.html">🛒</a>
         <span class="cart-count" id="cart-count">0</span>
-      </li>
-
-      <li><a href="about.html">about</a></li>
-      <li><a href="contact.html">contact</a></li>
+      </li><li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="services.html">services</a></li>
     </ul>
   </nav>
@@ -279,6 +339,10 @@ function searchFood(){
     alert("Item not found");
   }
 }
+function toggleMenu(){
+  document.getElementById("navbar").classList.toggle("active");
+}
+
 
 </script>
 

@@ -164,6 +164,67 @@ footer{
   color: white;
   margin-top: 30px;
 }
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  background: linear-gradient(90deg,#ff512f,#dd2476);
+  color:white;
+  position:relative;
+}
+
+/* NAV */
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* MOBILE VIEW */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:100%;
+    background:#ff512f;
+    display:none;
+    text-align:center;
+  }
+
+  nav ul{
+    flex-direction:column;
+    padding:20px 0;
+  }
+
+  nav ul li{
+    margin:10px 0;
+  }
+
+  nav.active{
+    display:block;
+  }
+}
 
 </style>
 
@@ -173,24 +234,23 @@ footer{
 
 <!-- HEADER -->
 <header>
+<div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
 
-<div class="logo">TastyFoods</div>
-
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="#burger">Burgers</a></li>
-<li><a href="#pizza">Pizza</a></li>
-<li><a href="#pasta">Pasta</a></li>
-<li class="cart-icon">
+  <nav id="navbar">
+    <ul>
+       <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li class="cart-icon">
         <a href="cart.html">🛒</a>
         <span class="cart-count" id="cart-count">0</span>
-      </li>
-</ul>
-</nav>
-
+      </li><li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="services.html">services</a></li>
+    </ul>
+  </nav>
 </header>
-
 <!-- PAGE TITLE -->
 <section class="menu-hero">
 <h1>Explore Our Delicious Menu</h1>
@@ -341,6 +401,10 @@ function addToCart(name, price){
   // OPTIONAL ALERT
   alert(name + " added to cart 🛒");
 }
+function toggleMenu(){
+  document.getElementById("navbar").classList.toggle("active");
+}
+
 
 </script>
 </body>
