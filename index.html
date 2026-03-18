@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TastyFoods | Food Delivery</title>
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+/* BACKGROUND */
+body{
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #667eea, #764ba2);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color:white;
+}
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* NAV */
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+/* CART */
+.cart-icon{
+  position:relative;
+}
+
+.cart-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  background:red;
+  border-radius:50%;
+  padding:2px 6px;
+  font-size:12px;
+}
+
+/* HERO */
+#hero{
+  text-align:center;
+  padding:80px 20px;
+}
+
+/* SEARCH */
+.search-box input{
+  padding:12px;
+  width:250px;
+  border:none;
+  border-radius:25px;
+}
+
+.search-box button{
+  padding:12px 20px;
+  border:none;
+  border-radius:25px;
+  background:#ff512f;
+  color:white;
+  cursor:pointer;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  margin:40px 0 20px;
+}
+
+/* CARD GRID */
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+  padding:20px;
+}
+
+/* FOOD CARDS */
+.card{
+  width:260px;
+  border-radius:15px;
+  overflow:hidden;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  transition:0.4s;
+  cursor:pointer;
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:15px;
+}
+
+.card:hover{
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* CATEGORY CARDS */
+.category{
+  padding:20px;
+  text-align:center;
+  border-radius:15px;
+  background: rgba(255,255,255,0.2);
+  transition:0.3s;
+}
+
+.category:hover{
+  transform:scale(1.1);
+}
+
+/* INFO SECTION */
+.info{
+  text-align:center;
+  padding:40px;
+}
+
+.info-box{
+  max-width:700px;
+  margin:auto;
+  background: rgba(255,255,255,0.15);
+  padding:20px;
+  border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">TastyFoods</div>
+
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+
+      <li class="cart-icon">
+        <a href="cart.html">🛒</a>
+        <span class="cart-count" id="cart-count">0</span>
+      </li>
+
+      <li><a href="about.html">about</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <li><a href="services.html">services</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <h1>Fresh & Delicious Food Delivered To Your Door</h1>
+  <p>Order your favourite meals from top restaurants near you.</p>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search food...">
+    <button onclick="searchFood()">Search</button>
+  </div>
+</section>
+
+<!-- POPULAR FOODS -->
+<h2 class="section-title">🔥 Popular Dishes</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="images/burger.jpg">
+    <div class="card-content">
+      <h3>Cheese Burger</h3>
+      <p>₹199 • Fast Food</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/OIP.jpeg">
+    <div class="card-content">
+      <h3>Italian Pizza</h3>
+      <p>₹299 • Italian</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/OIP1.webp">
+    <div class="card-content">
+      <h3>Creamy Pasta</h3>
+      <p>₹249 • Italian</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- CATEGORIES -->
+<h2 class="section-title">🍽️ Explore Categories</h2>
+
+<div class="grid">
+
+  <div class="category">🍔 Burgers</div>
+  <div class="category">🍕 Pizza</div>
+  <div class="category">🍜 Noodles</div>
+  <div class="category">🍰 Desserts</div>
+
+</div>
+
+<!-- INFO -->
+<section class="info">
+  <div class="info-box">
+    <h2>Why TastyFoods?</h2>
+    <p>
+      We deliver fresh, hygienic and tasty food from top restaurants near you.
+      Fast delivery, great offers and best quality guaranteed.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 TastyFoods. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+/* CART COUNT */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.getElementById("cart-count").textContent = cart.length;
+
+/* SEARCH */
+function searchFood(){
+  let value = document.getElementById("searchInput").value.toLowerCase();
+
+  if(value.includes("burger") || value.includes("pizza") || value.includes("pasta")){
+    window.location.href = "menu.html";
+  } else {
+    alert("Item not found");
+  }
+}
+
+</script>
+
+</body>
+</html>

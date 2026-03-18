@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | TastyFoods</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#667eea,#764ba2);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+    color:white;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+/* HERO */
+.about-hero{
+    height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:linear-gradient(135deg,#ff512f,#dd2476);
+}
+
+.about-hero h1{
+    font-size:40px;
+}
+
+.about-hero p{
+    font-size:18px;
+}
+
+/* ABOUT */
+.about-section{
+    padding:50px 20px;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    color:white;
+}
+
+/* FEATURES */
+.features{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:40px;
+}
+
+.feature{
+    background:rgba(255,255,255,0.2);
+    padding:20px;
+    border-radius:15px;
+    width:220px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+    color:white;
+    transform-style:preserve-3d;
+}
+
+/* 3D HOVER */
+.feature:hover{
+    transform:rotateY(10deg) rotateX(5deg) translateY(-10px) scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* RESTAURANTS */
+.restaurants{
+    padding:50px 20px;
+    text-align:center;
+    color:white;
+}
+
+.restaurant-container{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+/* CARD */
+.restaurant-card{
+    width:250px;
+    background:rgba(255,255,255,0.2);
+    padding:20px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+    transform-style:preserve-3d;
+}
+
+/* CARD LIFT EFFECT */
+.restaurant-card:hover{
+    transform:translateY(-15px) scale(1.05) rotateX(5deg);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(90deg,#ff512f,#dd2476);
+    color:white;
+    margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="logo">TastyFoods</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="cart.html">Cart</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+<h1>About TastyFoods</h1>
+<p>Fast • Fresh • Delicious Food Delivered to You</p>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+
+<h2>Who We Are</h2>
+
+<p>
+TastyFoods is a modern food delivery platform designed to make ordering food simple,
+fast, and enjoyable. We connect you with the best local restaurants and deliver
+your favorite meals straight to your doorstep.
+</p>
+
+<p>
+From juicy burgers to cheesy pizzas and creamy pasta, we ensure every order is
+prepared with fresh ingredients and delivered hot and on time.
+</p>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+
+<div class="feature">
+<h3>🚀 Fast Delivery</h3>
+<p>Get your food delivered quickly and safely.</p>
+</div>
+
+<div class="feature">
+<h3>🍔 Fresh Food</h3>
+<p>Prepared with high-quality ingredients.</p>
+</div>
+
+<div class="feature">
+<h3>💳 Easy Ordering</h3>
+<p>Simple and smooth online ordering experience.</p>
+</div>
+
+<div class="feature">
+<h3>⭐ Top Rated</h3>
+<p>Loved by hundreds of happy customers.</p>
+</div>
+
+</section>
+
+<!-- RESTAURANTS -->
+<section class="restaurants">
+
+<h2>Our Partner Restaurants</h2>
+
+<p>We proudly deliver food from top restaurants in your city:</p>
+
+<div class="restaurant-container">
+
+<div class="restaurant-card">
+<h3>Spicy Hub</h3>
+<p>Famous for burgers and fast food.</p>
+</div>
+
+<div class="restaurant-card">
+<h3>Italiano Delight</h3>
+<p>Best pizzas and pasta dishes.</p>
+</div>
+
+<div class="restaurant-card">
+<h3>Green Bowl</h3>
+<p>Healthy vegetarian meals and salads.</p>
+</div>
+
+<div class="restaurant-card">
+<h3>Royal Biryani House</h3>
+<p>Authentic biryani and Indian cuisine.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 TastyFoods | Fresh Food Delivered</p>
+</footer>
+
+</body>
+</html>

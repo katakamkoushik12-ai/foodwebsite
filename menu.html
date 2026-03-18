@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TastyFoods | Order Menu</title>
+
+<!-- INTERNAL CSS -->
+<style>
+
+/* RESET */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body{
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+}
+
+/* HEADER */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: white;
+}
+
+.logo{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+nav ul li a:hover{
+  color: yellow;
+}
+
+/* HERO */
+.menu-hero{
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.menu-hero h1{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* FOOD SECTION */
+.food-section{
+  padding: 50px;
+}
+
+.food-section h2{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.menu-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.card{
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 20px;
+  transition: 0.4s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* HOVER EFFECT */
+.card:hover{
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.card h3{
+  margin: 10px 0;
+}
+
+.card p{
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.price{
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #ff512f;
+}
+
+/* BUTTON */
+.order-btn{
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.order-btn:hover{
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #dd2476, #ff512f);
+}
+
+/* CART */
+#cart{
+  background: white;
+  margin: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#cart h2{
+  margin-bottom: 15px;
+}
+
+#cart-items li{
+  margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer{
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: white;
+  margin-top: 30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+<div class="logo">TastyFoods</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#burger">Burgers</a></li>
+<li><a href="#pizza">Pizza</a></li>
+<li><a href="#pasta">Pasta</a></li>
+<li class="cart-icon">
+        <a href="cart.html">🛒</a>
+        <span class="cart-count" id="cart-count">0</span>
+      </li>
+</ul>
+</nav>
+
+</header>
+
+<!-- PAGE TITLE -->
+<section class="menu-hero">
+<h1>Explore Our Delicious Menu</h1>
+<p>Choose from a variety of freshly prepared meals.</p>
+</section>
+
+<!-- BURGER SECTION -->
+<section id="burger" class="food-section">
+<h2>Burgers</h2>
+
+<div class="menu-container">
+
+<div class="card">
+<img src="images/Burger.JPG">
+<h3>Classic Beef Burger</h3>
+<p>Juicy beef patty with cheese and fresh vegetables.</p>
+<span class="price">$8.99</span>
+<button class="order-btn" onclick="addToCart('Classic Beef Burger',8.99)">Order Now</button>
+</div>
+
+<div class="card">
+<img src="images/Burger.JPG">
+<h3>Chicken Burger</h3>
+<p>Crispy chicken burger with spicy mayo sauce.</p>
+<span class="price">$7.99</span>
+<button class="order-btn" onclick="addToCart('Chicken Burger',7.99)">Order Now</button>
+</div>
+
+<div class="card">
+<img src="images/Burger.JPG">
+<h3>Veggie Burger</h3>
+<p>Healthy vegetable patty with lettuce and tomato.</p>
+<span class="price">$6.99</span>
+<button class="order-btn" onclick="addToCart('Veggie Burger',6.99)">Order Now</button>
+</div>
+
+</div>
+</section>
+
+<!-- PIZZA SECTION -->
+<section id="pizza" class="food-section">
+<h2>Pizza</h2>
+
+<div class="menu-container">
+
+<div class="card">
+<img src="images/pizza.PNG">
+<h3>Margherita Pizza</h3>
+<p>Classic pizza topped with mozzarella and basil.</p>
+<span class="price">$10.99</span>
+<button class="order-btn" onclick="addToCart('Margherita Pizza',10.99)">Order Now</button>
+</div>
+
+<div class="card">
+<img src="images/pizza.PNG">
+<h3>Pepperoni Pizza</h3>
+<p>Loaded with pepperoni and extra cheese.</p>
+<span class="price">$11.99</span>
+<button class="order-btn" onclick="addToCart('Pepperoni Pizza',11.99)">Order Now</button>
+</div>
+
+<div class="card">
+<img src="images/pizza.PNG">
+<h3>Farmhouse Pizza</h3>
+<p>Vegetable pizza with capsicum, onion and tomato.</p>
+<span class="price">$9.99</span>
+<button class="order-btn" onclick="addToCart('Farmhouse Pizza',9.99)">Order Now</button>
+</div>
+
+</div>
+</section>
+
+<!-- PASTA SECTION -->
+<section id="pasta" class="food-section">
+<h2>Pasta</h2>
+
+<div class="menu-container">
+
+<div class="card">
+<img src="images/pasta.WEBP">
+<h3>White Sauce Pasta</h3>
+<p>Creamy pasta cooked with cheese and herbs.</p>
+<span class="price">$9.49</span>
+<button class="order-btn" onclick="addToCart('White Sauce Pasta',9.49)">Order Now</button>
+</div>
+
+<div class="card">
+<img src="images/pasta.WEBP">
+<h3>Red Sauce Pasta</h3>
+<p>Italian pasta with tomato garlic sauce.</p>
+<span class="price">$8.99</span>
+<button class="order-btn" onclick="addToCart('Red Sauce Pasta',8.99)">Order Now</button>
+</div>
+
+<div class="card">
+<img src="images/pasta.WEBP">
+<h3>Cheese Pasta</h3>
+<p>Rich cheesy pasta loved by everyone.</p>
+<span class="price">$10.49</span>
+<button class="order-btn" onclick="addToCart('Cheese Pasta',10.49)">Order Now</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 TastyFoods | Fresh Food Delivered</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+
+/* LOAD CART FROM STORAGE */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+/* UPDATE CART COUNT */
+function updateCartCount(){
+  document.getElementById("cart-count").textContent = cart.length;
+}
+
+updateCartCount();
+
+/* ADD TO CART FUNCTION */
+function addToCart(name, price){
+
+  // check if item already exists
+  let existingItem = cart.find(item => item.name === name);
+
+  if(existingItem){
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      name: name,
+      price: price,
+      quantity: 1,
+      addons: []
+    });
+  }
+
+  // SAVE TO LOCAL STORAGE
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // UPDATE CART COUNT
+  updateCartCount();
+
+  // OPTIONAL ALERT
+  alert(name + " added to cart 🛒");
+}
+
+</script>
+</body>
+</html>
